@@ -1,0 +1,85 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #4e73df, #1cc88a);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 400px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+input[type="file"] {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #4e73df;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #2e59d9;
+}
+
+
+.resultado {
+    width: 800px;
+    max-height: cover;
+    overflow: hidden;
+}
+
+.texto-box {
+    background: #f8f9fc;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    height: 400px;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.texto-box pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 14px;
+    color: #333;
+}
+
+.btn-voltar {
+    display: inline-block;
+    text-decoration: none;
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-voltar:hover {
+    background-color: #60616f;
+}

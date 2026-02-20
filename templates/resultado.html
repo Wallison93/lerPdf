@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado da Extração</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container resultado">
+         <a href="/" class="btn-voltar">Voltar</a>
+        <h1>Texto Extraído</h1>
+
+        <div class="texto-box">
+            <pre>{{ texto }}</pre>
+        </div>
+    </div>
+</body>
+</html>
