@@ -24,18 +24,20 @@ def upload_pdf():
     if file.filename == "":
         return render_template("resultado.html", texto="Nenhum arquivo selecionado.")
 
-    filepath = os.path.join(UPLOAD_FOLDER, file.filename)
-    file.save(filepath)
-
     texto_extraido = ""
 
     try:
-        with pdfplumber.open(filepath) as pdf:
+        # 🔹 EXTRAÇÃO DIRETO DA MEMÓRIA (sem salvar no disco)
+        with pdfplumber.open(file.stream) as pdf:
             for pagina in pdf.pages:
                 texto_extraido += pagina.extract_text() or ""
                 texto_extraido += "\n\n"
 
-        # 🔹 Agora apenas chamamos a função
+        # 🔹 Caso queira salvar o arquivo futuramente
+        # filepath = os.path.join(UPLOAD_FOLDER, file.filename)
+        # file.save(filepath)
+
+        # 🔹 Salvar texto no banco
         salvar_pdf(file.filename, texto_extraido)
 
     except Exception as e:
